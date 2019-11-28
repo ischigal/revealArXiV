@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>TODO TITLE</title>
+
+  <meta name="description" content="TODO TITLE">
+  <meta name="author" content="TODO AUTHOR">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="../../reveal-js-files/css/reset.css">
+  <link rel="stylesheet" href="../../reveal-js-files/css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <!-- <link rel="stylesheet" href="css/theme/solarized.css"> -->
+  <link rel="stylesheet" href="../../reveal-js-files/css/theme/solarized.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../../reveal-js-files/lib/css/monokai.css">
+
+  <link rel="stylesheet" href="../../reveal-js-files/external/fontawesome-free-5.11.2-web/css/all.css">
+  <link rel="stylesheet" href="mystyles.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../../reveal-js-files/css/print/pdf.css' : '../../reveal-js-files/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+
+    <!-- <div class="logo">
+      <img src="images/logo.svg" />
+    </div> -->
+
+    <div class="footer">
+      TODO AUTHOR | <a href="mailto:TODO@EMAIL.COM">TODO@EMAIL.COM</a>
+      <!-- TODO mail adress -->
+    </div>
+
+    <div class="slides">
+
+      <section class="title-slide">
+        <div>
+          <div style="text-align: left; width: 70%; margin: 0% auto;">
+            <!-- margin was 10% auto;-->
+            <h1 style="font-size:410%;"> TODO TITLE
+            </h1>
+            <h2 style="margin-top:10%;font-size:250%;">TODO AUTHOR</h2>
+            <!-- <h2>University of Innsbruck</h2> -->
+            <h4 style="margin-top:1%;font-size:125%;">TODO DATE</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- TODO from here on insert auto output of py script -->
+ 
+      
+      <!-- TODO end auto output -->
+
+    </div>
+  </div>
+
+  <!-- the following script was written by David Huber (https://github.com/cxkoda) -->
+  <script>
+    function addArxivLink(myDiv) {
+      var arxivNo = myDiv.innerHTML;
+
+      var aTag = document.createElement('a');
+      aTag.setAttribute('href', "https://arxiv.org/abs/" + arxivNo);
+      aTag.innerText = "arXiv: " + arxivNo;
+      myDiv.innerHTML = aTag.outerHTML;
+    }
+
+    function addArxivLinks() {
+      var allDivs = document.getElementsByClassName("arxiv-number");
+      [].forEach.call(allDivs, addArxivLink);
+    }
+
+    addArxivLinks()
+  </script>
+
+  <script src="../../reveal-js-files/js/reveal.js"></script>
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      // Resolution
+      width: 1920,
+      height: 1080,
+
+      // Display presentation control arrows
+      controls: false,
+
+      // Help the user learn the controls by providing hints, for example by
+      // bouncing the down arrow when they first encounter a vertical slide
+      controlsTutorial: false,
+
+      // Determines where controls appear, "edges" or "bottom-right"
+      controlsLayout: 'bottom-right',
+
+      // Visibility rule for backwards navigation arrows; "faded", "hidden"
+      // or "visible"
+      controlsBackArrows: 'faded',
+
+      // Display a presentation progress bar
+      progress: true,
+
+      // Display the page number of the current slide
+      // slideNumber: true,
+      slideNumber: 'c / t',
+
+      // Add the current slide number to the URL hash so that reloading the
+      // page/copying the URL will return you to the same slide
+      hash: true,
+
+      // Push each slide change to the browser history. Implies `hash: true`
+      history: false,
+
+      // Enable the slide overview mode
+      overview: true,
+
+      // Vertical centering of slides
+      center: false,
+
+      // Flags if speaker notes should be visible to all viewers
+      showNotes: false,
+
+      // Transition style
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Transition speed
+      transitionSpeed: 'default', // default/fast/slow
+
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+      // parallaxBackgroundImage: 'images/bkgtest_lower.png',
+      // parallaxBackgroundSize: '3000px 1300px',
+      // parallaxBackgroundVertical: 0,
+
+      math: {
+        mathjax: '../../reveal-js-files//external/MathJax/MathJax.js',
+        // mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+        config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+        // pass other options into `MathJax.Hub.Config()`
+        // TeX: { Macros: macros }
+      },
+
+      dependencies: [{
+        src: '../../reveal-js-files/plugin/markdown/marked.js'
+      }, {
+        src: '../../reveal-js-files/plugin/markdown/markdown.js'
+      }, {
+        src: '../../reveal-js-files/plugin/notes/notes.js',
+        async: true
+      }, {
+        src: '../../reveal-js-files/plugin/zoom-js/zoom.js',
+        async: true
+      },
+      // { src: 'plugin/highlight/highlight.js', async: true },
+      {
+        src: '../../reveal-js-files/plugin/math/math.js',
+        // src: 'plugin/math-gc/math-gc.js',
+        async: true
+      }, {
+        src: '../../reveal-js-files/plugin/mathsvg/math.js',
+        async: true
+      }, {
+        // maybe you put this in `plugins`
+        src: '../../reveal-js-files/plugin/reveal-svg-fragment/reveal-svg-fragment.js',
+        condition: function () {
+          return !!document.querySelector('[data-svg-fragment]');
+        }
+      }
+      ]
+    });
+    Reveal.configure({
+      keyboard: {
+        // // up
+        // 38: null,
+        // // down
+        // 40: null,
+
+        // // left
+        // 37: 'prev',
+        // // right
+        // 39: 'next',
+
+        // page down
+        // 34: 'next',
+        34: 'right',
+        //page up
+        // 33: 'prev'
+        33: 'left',
+      }
+    });
+  </script>
+</body>
+</html>
