@@ -3,20 +3,19 @@ import urllib.request
 import re
 
 
-def tagSub(htmlKey, text):
-
-    return re.sub(r"\\n", " ", re.sub(r"\n ", "", re.sub("</"+htmlKey+">", "", re.sub("<"+htmlKey+">", "", re.search("<"+htmlKey+">((?s).*)</"+htmlKey+">", text).group(0))))).strip()
-
-
-def authorSub(authorString):
-
-    return re.sub("<arxiv:affiliation.*?</arxiv:affiliation>, ", "", re.sub('\s{2,}', ', ', tagSub("name", tagSub("author", authorString)))).strip()
-
-
 def htmlPrinter(numberList):
+
+    def tagSub(htmlKey, text):
+
+        return re.sub(r"\\n", " ", re.sub(r"\n ", "", re.sub("</"+htmlKey+">", "", re.sub("<"+htmlKey+">", "", re.search("<"+htmlKey+">((?s).*)</"+htmlKey+">", text).group(0))))).strip()
+
+    def authorSub(authorString):
+
+        return re.sub("<arxiv:affiliation.*?</arxiv:affiliation>, ", "", re.sub('\s{2,}', ', ', tagSub("name", tagSub("author", authorString)))).strip()
 
     with open("arXivOut.html", "w") as outFile:
         for number in numberList:
+            print("processing article "+number+" ...")
             url = 'http://export.arxiv.org/api/query?search_query=all:'+number+'&start=0&max_results=1'
             data = urllib.request.urlopen(url).read()
             abstract = tagSub("summary", str(data, encoding="utf-8"))
@@ -32,5 +31,4 @@ def htmlPrinter(numberList):
 
 
 inList = np.genfromtxt("arXivInList.txt", dtype=str)
-
 htmlPrinter(inList)
