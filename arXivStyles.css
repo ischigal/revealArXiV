@@ -1,0 +1,43 @@
+.arxiv-number {
+  margin-top: 10px;
+}
+
+.arxiv-number a {
+  color: #f39200;
+}
+
+.doi-number a {
+  color: #f39200;
+}
+
+.arxiv-title {
+  font-variant-caps: petite-caps;
+  font-size: 1.0em;
+  color: #003361;
+  width: 1900px;
+  margin: 2% auto;
+}
+
+.arxiv-authors {
+  font-variant-caps: petite-caps;
+  font-size: 0.58em;
+  color: #00336193;
+  width: 1900px;
+  margin: 0% auto;
+}
+
+.arxiv-abstract {
+  font-size: 0.8em;
+  text-align: left;
+  font-family: Computer Modern;
+  color: #003361;
+  width: 1900;
+  margin: 2% auto;
+}
+
+.arxiv-highlight {
+  background-color: #d33682;
+  /* background-color: #e44793; */
+  /* color: #eeeeee; */
+  color: #ffffff; 
+}

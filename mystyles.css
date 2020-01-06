@@ -129,25 +129,6 @@
     font-variant-caps: petite-caps;
     font-size: 0.4em;
   }
-  .arxiv-number a {
-    color:#f39200;
-  }  
-  .arxiv-title{
-    font-variant-caps: petite-caps;
-    font-size: 1.0em;
-    color: #003361;
-  }
-  .arxiv-authors{
-    font-variant-caps: petite-caps;
-    font-size: 0.58em;
-    color: #00336193;
-  }
-  .arxiv-abstract{
-    font-size: 0.8em;
-    text-align: left;
-    font-family:Computer Modern;
-    color: #003361;
-  }
 
   .crop-wrapper {
     overflow: hidden;

@@ -22,6 +22,7 @@
 
   <link rel="stylesheet" href="../../reveal-js-files/external/fontawesome-free-5.11.2-web/css/all.css">
   <link rel="stylesheet" href="mystyles.css">
+  <link rel="stylesheet" href="arXivStyles.css">
 
   <!-- Printing and PDF exports -->
   <script>
@@ -72,20 +73,32 @@
   <script>
     function addArxivLink(myDiv) {
       var arxivNo = myDiv.innerHTML;
-
       var aTag = document.createElement('a');
       aTag.setAttribute('href', "https://arxiv.org/abs/" + arxivNo);
       aTag.innerText = "arXiv: " + arxivNo;
       myDiv.innerHTML = aTag.outerHTML;
     }
-
     function addArxivLinks() {
       var allDivs = document.getElementsByClassName("arxiv-number");
       [].forEach.call(allDivs, addArxivLink);
     }
-
     addArxivLinks()
   </script>
+  <script>
+    function addDoiLink(myDiv) {
+      var doi = myDiv.innerHTML;
+      var aTag = document.createElement('a');
+      aTag.setAttribute('href', "https://doi.org/" + doi);
+      aTag.innerText = "doi: " + doi;
+      myDiv.innerHTML = aTag.outerHTML;
+    }
+    function addDoiLinks() {
+      var allDivs = document.getElementsByClassName("doi-number");
+      [].forEach.call(allDivs, addDoiLink);
+    }
+    addDoiLinks()
+  </script>
+
 
   <script src="../../reveal-js-files/js/reveal.js"></script>
   <script>
